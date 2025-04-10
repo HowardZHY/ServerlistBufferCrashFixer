@@ -11,7 +11,7 @@ buildscript {
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'org.spongepowered.mixin'
-apply plugin: 'eclipse'
+apply plugin: 'idea'
 
 version = mod_version
 group = mod_group
@@ -20,6 +20,13 @@ archivesBaseName = mod_id
 sourceCompatibility = targetCompatibility = '1.8'
 compileJava {
     sourceCompatibility = targetCompatibility = '1.8'
+}
+
+idea {
+        module {
+            downloadJavadoc = false
+            downloadSources = false
+        }
 }
 
 minecraft {
@@ -94,6 +101,5 @@ jar {
         attributes "ForceLoadAsMod": "true"
         attributes "TweakClass": "org.spongepowered.asm.launch.MixinTweaker"
         attributes "MixinConfigs": mod_mixin_configs.replace('${mod_id}', mod_id)
-
     }
 }
