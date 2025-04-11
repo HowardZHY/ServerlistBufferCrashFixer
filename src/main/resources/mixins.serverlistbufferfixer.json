@@ -4,6 +4,7 @@
   "refmap": "refmap.serverlistbufferfixer.json",
   "mixins": [],
   "client": [
+    "OldServerPingerMixin",
     "ServerListEntryNormalMixin"
   ],
   "server": []

@@ -1,13 +1,16 @@
 [
 {
-  "modid": "${mod_id}",
-  "name": "${mod_name}",
-  "description": "${mod_description}",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "https://github.com/Nixuge/ServerlistBufferFixer",
+  "modid": "serverlistbufferfixer",
+  "name": "Serverlist Buffer Crash Fixer",
+  "description": "Serverlist screen crash fixes than original mod",
+  "version": "1.1.0",
+  "mcversion": "[1.8.8,)",
+  "url": "https://github.com/HowardZHY/ServerlistBufferFixer",
   "updateUrl": "",
-  "authorList": ${mod_author},
+  "authorList": [
+    "Nixuge",
+    "HowardZHY"
+  ],
   "credits": "",
   "logoFile": "",
   "screenshots": [],

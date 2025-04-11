@@ -1,4 +1,4 @@
-package me.nixuge.serverlistbufferfixer.mixins;
+package me.nixuge.serverlistbufferfixer.core;
 
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import org.spongepowered.asm.launch.MixinBootstrap;
@@ -9,7 +9,6 @@ import me.nixuge.serverlistbufferfixer.McMod;
 
 import java.util.Map;
 
-@IFMLLoadingPlugin.MCVersion("1.8.9")
 public class MixinLoader implements IFMLLoadingPlugin {
     public MixinLoader() {
         MixinBootstrap.init();

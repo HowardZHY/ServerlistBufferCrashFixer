@@ -1,18 +1,34 @@
 package me.nixuge.serverlistbufferfixer.config;
 
-import lombok.Getter;
 import me.nixuge.serverlistbufferfixer.McMod;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Getter
 public class ConfigCache {
     private final Configuration configuration;
 
     private int maxThreadCountPinger;
+
     private int maxThreadCountTimeout;
+
     private int serverTimeout;
+
+    public Configuration getConfiguration() {
+        return this.configuration;
+    }
+
+    public int getMaxThreadCountPinger() {
+        return maxThreadCountPinger;
+    }
+
+    public int getMaxThreadCountTimeout() {
+        return maxThreadCountTimeout;
+    }
+
+    public int getServerTimeout() {
+        return serverTimeout;
+    }
 
     public ConfigCache(final Configuration configuration) {
         this.configuration = configuration;

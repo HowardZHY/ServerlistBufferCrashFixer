@@ -2,8 +2,6 @@ package me.nixuge.serverlistbufferfixer;
 
 import java.io.File;
 
-import lombok.Getter;
-import lombok.Setter;
 import me.nixuge.serverlistbufferfixer.config.ConfigCache;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
@@ -16,26 +14,51 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
         name = McMod.NAME,
         version = McMod.VERSION,
         guiFactory = "me.nixuge.serverlistbufferfixer.gui.GuiFactory",
-        clientSideOnly = true
+        clientSideOnly = true,
+        acceptableRemoteVersions = "*",
+        useMetadata = true
 )
-
-@Setter
 public class McMod {
     public static final String MOD_ID = "serverlistbufferfixer";
     public static final String NAME = "Serverlist Buffer Fixer";
-    public static final String VERSION = "1.0.1";
+    public static final String VERSION = "1.1.0";
 
-
-    @Getter
     @Mod.Instance(value = McMod.MOD_ID)
     private static McMod instance;
 
-    @Getter
     private Configuration configuration;
-    @Getter
+
     private String configDirectory;
-    @Getter
+
     private ConfigCache configCache;
+
+    public void setConfiguration(Configuration configuration) {
+        this.configuration = configuration;
+    }
+
+    public void setConfigDirectory(String configDirectory) {
+        this.configDirectory = configDirectory;
+    }
+
+    public void setConfigCache(ConfigCache configCache) {
+        this.configCache = configCache;
+    }
+
+    public static McMod getInstance() {
+        return instance;
+    }
+
+    public Configuration getConfiguration() {
+        return configuration;
+    }
+
+    public String getConfigDirectory() {
+        return configDirectory;
+    }
+
+    public ConfigCache getConfigCache() {
+        return configCache;
+    }
 
     @Mod.EventHandler
     public void preInit(final FMLPreInitializationEvent event) {
