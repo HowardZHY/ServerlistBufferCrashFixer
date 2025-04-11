@@ -1,4 +1,13 @@
-# Serverlist Buffer Fixer
+# Serverlist Buffer Crash Fixer
+
+This fork fixes 2 crashes than original mod:
+
+`java.lang.ClassNotFoundException: net.minecraft.client.gui.ServerListEntryNormal$Anonymous$RANDOM_NUMBER`
+
+`java.lang.NullPointerException: Ticking screen 
+at io.netty.bootstrap.Bootstrap.checkAddress(Bootstrap.java:255)`
+
+# Original Desc:
 A mod that fixes the slow/infinite server data loading in the multiplayer menu. 
 
 Also prevents you from spamming "refresh" too much.
@@ -19,7 +28,7 @@ When too many tasks are already running and you try to refresh, the server text 
 ## Change the number of the server pinger's max concurrent task count
 (the pinger is `field_148302_b` in the used 1.8.9 mappings, which is a `ScheduledThreadPoolExecutor`)
 
-By default this is set to 5, which is REALLY low, especially if you have a lot of servers.
+By default, this is set to 5, which is REALLY low, especially if you have a lot of servers.
 
 Even more so if you had some servers that failed to ping, in which case you'd usually get stuck completely after only a few refreshes at most.
 
